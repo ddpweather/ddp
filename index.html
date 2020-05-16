@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather | Live Weather</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,900;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <h1>DDP Weather</h1>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-image: url('https://images.alphacoders.com/959/thumb-1920-959309.png');
+            background-size: cover;
+            background-position: top center;
+
+        }
+
+        .app-wrap {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
+        }
+
+        h1 {
+            background-color: black;
+            color: goldenrod;
+            font-family: 'Montserrat', sans-serif;
+            padding: .5em .5em .5em .5em;
+            text-align: center;
+            font-size: 2em;
+            font-weight: 500;
+
+
+        }
+
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 15px 15px;
+        }
+
+        header input {
+            width: 100%;
+            max-width: 280px;
+            padding: 10px 15px;
+            border: none;
+            outline: none;
+            background-color: rgba(255, 255, 255, 0.11);
+            border-radius: 16px 0px 16px 0px;
+            border-bottom: 3px solid #DF8E00;
+
+            color: white;
+            font-size: 20px;
+            font-weight: 300;
+            transition: 0.2s ease-out;
+        }
+
+        header input:focus {
+            background-color: rgba(255, 255, 255, 0.19);
+        }
+
+        main {
+            flex: 1 1 100%;
+            padding: 25px 25px 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .location .city {
+            color: #fff;
+            margin-bottom: 5px;
+            font-size: 32px;
+            font-weight: 500;
+        }
+
+        .location .date {
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .current .temp {
+            color: #fff;
+            font-size: 102px;
+            font-weight: 900;
+            margin: 30px 0px;
+            text-shadow: 2px 10px rgba(0, 0, 0, 0.6);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .current .temp span {
+            font-weight: 500;
+        }
+
+        .current .weather {
+            color: #fff;
+            font-size: 32px;
+            font-weight: 700;
+            font-style: italic;
+            margin-bottom: 15px;
+            text-shadow: 0px 3px rgba(0, 0, 0, 0.4);
+
+        }
+
+        .current .hi-low {
+            color: #fff;
+            font-size: 24px;
+            font-weight: 500;
+            text-shadow: rgba(0, 0, 0, 0.4);
+        }
+
+        .howtouse {
+            color: goldenrod;
+            padding: 20px 10px 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
+        }
+
+        .stepone {
+            color: goldenrod;
+            padding: 20px 10px 10px;
+            font-family: 'Montserrat', sans-serif;
+
+        }
+
+        .stepone span {
+            color: red;
+            padding: 20px 10px 10px;
+
+        }
+
+        .steptwo {
+            color: goldenrod;
+            padding: 20px 10px 10px;
+            font-family: 'Montserrat', sans-serif;
+
+        }
+
+        .steptwo span{
+            color: red;
+           
+
+        }
+
+        .stepthree {
+            color: goldenrod;
+            padding: 20px 10px 10px;
+            font-family: 'Montserrat', sans-serif;
+
+        }
+
+        .stepthree span{
+            color: red;
+            
+
+        }
+        
+
+         
+        @media (max-width: 600px) {
+				html {
+					font-size: 14px;
+				}
+				.container {
+					width: 100%;
+					margin: 0 auto;
+				}
+				ul.currencies {
+					height: calc(100vh - 83px - 34px - 51px);
+				}
+				.header h1 {
+					font-size: 2rem;
+				}
+				.flag {
+					width: 3rem;
+					height: 2rem;
+				}
+				.info .input span {
+					font-size: 1.25rem;
+					width: 3.5rem;
+				}
+				.info .input input {
+					font-size: 1.25rem;
+					width: 76%;
+				}
+				.info .currency-name {
+					margin-left: 3.5rem;
+				}
+				.info .base-currency-rate {
+					margin-left: 3.5rem;
+				}
+				ul.add-currency-list {
+					bottom: 48px;
+					height: calc(100vh - 80px - 51px);
+				}
+				.add-currency-btn i {
+					left: 25%;
+					top: 0.65rem;
+				}
+			}
+
+    </style>
+
+    <div class="app-wrap">
+        <header>
+            <input type="text" autocomplete="off" class="search-box" placeholder="Search for a city..."> 
+        </header>
+        <main>
+            <section class="location">
+                <div class="city">City, Country</div>
+                <div class="date">Date</div>
+                <div class="current">
+                    <div class="temp">temp<span>°c<span></div>
+                        <div class="weather">general</div>
+                        <div class="hi-low">Previous hr temp / Next hr temp</div>
+
+                        
+                </di>
+            </section>
+
+            <div class="howtouse">How to use</div>
+            <div class="stepone">1. Accurately type the city that you would like to see the weather of. <span>eg - (London)</span></div>
+            <div class="steptwo">2. You will see the weather for the most popular city with that name. <span>eg - (London, GB)</span></div>
+            <div class="stepthree">3. If you would like to see a different city with the same name type a comma then the initionals on the country. <span>eg - (London, US)</span></div>
+        </main>
+    </div>
+
+
+
+
+    <script>
+
+        const api = {
+            key: "3343a91f1920c3e0f08d56697b84af21",
+            base: "http://api.openweathermap.org/data/2.5/"
+
+        }
+
+        const searchbox = document.querySelector('.search-box');
+        searchbox.addEventListener('keypress', setQuery);
+
+        function setQuery(evt) {
+            if (evt.keyCode == 13) {
+                getResults(searchbox.value);
+            }
+        }
+
+        function getResults (query) {
+            fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
+            .then(weather => {
+                return weather.json();
+            }).then(displayResults);
+        }        
+
+                function displayResults (weather) {
+        let city = document.querySelector('.location .city');
+        city.innerText = `${weather.name}, ${weather.sys.country}`;
+
+        let now = new Date();
+        let date = document.querySelector('.location .date');
+        date.innerText = dateBuilder(now);
+
+        let temp = document.querySelector('.current .temp');
+        temp.innerHTML = `${Math.round(weather.main.temp)}<span>°c</span>`;
+
+        let weather_el = document.querySelector('.current .weather');
+        weather_el.innerText = weather.weather[0].main;
+
+        let hilow = document.querySelector('.hi-low');
+        hilow.innerText = `${Math.round(weather.main.temp_min)}°c / ${Math.round(weather.main.temp_max)}°c`;
+        }
+
+
+
+
+                function dateBuilder (d) {
+        let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+        let day = days[d.getDay()];
+        let date = d.getDate();
+        let month = months[d.getMonth()];
+        let year = d.getFullYear();
+
+        return `${day} ${date} ${month} ${year}`;
+        }
+
+
+    </script>
+</body>
+</html>
